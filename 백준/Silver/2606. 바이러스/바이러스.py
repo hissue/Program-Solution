@@ -1,26 +1,26 @@
 import sys
 sys.setrecursionlimit(10**7)
 
-N = int(sys.stdin.readline())
-M = int(sys.stdin.readline())
+computers = int(sys.stdin.readline())
+pairs = int(sys.stdin.readline())
 
-graph = [[] for _ in range(N+1)]
-visited = [False] * (N+1)
+network = [[] for _ in range(computers+1)]
+visited = []
 cnt = 0
 
-for i in range(M):
+for i in range(pairs):
     s,e = map(int,sys.stdin.readline().split())
-    graph[s].append(e)
-    graph[e].append(s)
+    network[s].append(e)
+    network[e].append(s)
 
 def dfs(v):
     global cnt
-    visited[v] = True
-    for q in graph[v]:
-        if visited[q] == False:
-            visited[q] = True
+    visited.append(v)
+    for i in network[v]:
+        if i not in visited:
+            visited.append(i)
             cnt+=1
-            dfs(q)
-    
+            dfs(i)
+
 dfs(1)
 print(cnt)
