@@ -1,5 +1,5 @@
 import sys
-import heapq
+from collections import deque
 N,K = map(int,sys.stdin.readline().split())
 
 arr = []
@@ -9,17 +9,21 @@ for _ in range(N):
 
 S,X,Y = map(int,sys.stdin.readline().split())
 
-birus = []
-visited = [[0]*(N) for _ in range(N)]
+birus = deque()
+
+temp = []
 
 for i in range(N):
     for j in range(N):
         if arr[i][j] != 0:
-            heapq.heappush(birus,(0,arr[i][j],i,j))
-            visited[i][j] = arr[i][j]
+            temp.append((arr[i][j],0,i,j))
+
+temp.sort()
+
+birus = deque(temp)
 
 while birus:
-    time,num, x,y = heapq.heappop(birus)
+    num,time,x,y = birus.popleft()
 
     if time == S:
         break
@@ -31,8 +35,8 @@ while birus:
         nx = x + dx[i]
         ny = y + dy[i]
 
-        if 0<=nx<N and 0<=ny<N and visited[nx][ny] == 0:
-            visited[nx][ny] = num
-            heapq.heappush(birus,(time+1,num,nx,ny))
-            
-print(visited[X-1][Y-1])
+        if 0<=nx<N and 0<=ny<N and arr[nx][ny] == 0:
+            arr[nx][ny] = num
+            birus.append((num,time+1,nx,ny))
+
+print(arr[X-1][Y-1])
