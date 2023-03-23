@@ -1,5 +1,4 @@
 import sys
-from collections import deque
 N,M  = map(int,sys.stdin.readline().split())
 
 bigger = [[] for _ in range(N+1)]
@@ -12,12 +11,12 @@ for _ in range(M):
 
 
 def solution(arr,cnt,x):
-    que = deque()
-    que.append(x)
-    visited[x] = True
+    stack = []
+    stack.append(x)
+    visited[x] = True # 시간의 중요성
 
-    while que:
-        ch = que.popleft()
+    while stack:
+        ch = stack.pop()
         for i in arr[ch]:
             if not visited[i]:
                 cnt+=1
