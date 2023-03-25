@@ -1,19 +1,18 @@
-N = int(input())
-time = []
+# 한 개의 회의실이 있을 경우 N개의 회의에 대하여 회의실 사용표 제작
+# 시작 시간과 끝 시간이 겹치지 않게 하면서 회의실을 사용할 수 있는 최대 개수는?
+# 한 회의 끝남과 동시에 다음 회의 시작 가능하며, 회의 시작과 끝나는 시간이 같을 수 있음
+import sys
+N = int(sys.stdin.readline())
 
-for _ in range(N):
-  start, end = map(int, input().split())
-  time.append([start, end])
+meeting = [list(map(int,sys.stdin.readline().split())) for _ in range(N)]
 
-time = sorted(time, key=lambda a: a[0]) # 시작 시간을 기준으로 오름차순
-time = sorted(time, key=lambda a: a[1]) # 끝나는 시간을 기준으로 다시 오름차순
+meeting.sort(key=lambda x : (x[1],x[0]))
 
-last = 0 # 회의의 마지막 시간을 저장할 변수
-conut = 0 # 회의 개수를 저장할 변수
+temp = 0
+cnt = 0
 
-for i, j in time:
-  if i >= last: # 시작시간이 회의의 마지막 시간보다 크거나 같을경우
-    conut += 1
-    last = j
-
-print(conut)
+for s,e in meeting:
+    if s >= temp:
+        temp = e
+        cnt+=1
+print(cnt)
