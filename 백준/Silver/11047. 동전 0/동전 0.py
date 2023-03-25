@@ -1,16 +1,11 @@
 import sys
 
-N, K = map(int,sys.stdin.readline().split())
+N,K = map(int,sys.stdin.readline().split())
 
-arr = [int(sys.stdin.readline()) for _ in range(N)]
-arr.sort(reverse=True)
+coins = [int(sys.stdin.readline()) for _ in range(N)]
 cnt = 0
-for coin in arr:
-    if K >= coin:
+for coin in reversed(coins):
+    if K//coin != 0:
         cnt+=K//coin
-        K%=coin
-    
-    if K == 0:
-        break
-    
+        K = K%coin
 print(cnt)
