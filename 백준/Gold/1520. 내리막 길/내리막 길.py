@@ -9,8 +9,7 @@ visited = [[-1]*N for _ in range(M)]
 def dfs(col, row):
     
     if col == M-1 and row == N-1:
-        visited[col][row] = 1
-        return visited[col][row]
+        return 1
     
     if visited[col][row] !=-1:
         return visited[col][row]
