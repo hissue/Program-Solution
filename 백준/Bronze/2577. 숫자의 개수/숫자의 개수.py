@@ -1,11 +1,17 @@
-arr = list(int(input()) for _ in range(3))
-temp = 1
-result = [0]*10
-for i in arr:
-    temp*=i
+data1 = int(input())
+data2 = int(input())
+data3 = int(input())
 
-for i in str(temp):
-    result[int(i)]+=1
+dicts = {}
+result = data1*data2*data3
+for _ in range(10):
+    dicts[_] = 0
 
-for i in range(10):
-    print(result[i])
+while(result>0):
+    rest=result%10
+    result//=10
+    dicts[rest] += 1
+
+for _ in range(10):
+    print(dicts[_])
+    
