@@ -1,0 +1,12 @@
+from collections import deque
+def solution(s):
+    left_list = [s[0]]
+    right_list = deque(s[1:])
+    
+    while right_list :
+        if not left_list or left_list[-1] != right_list[0]:
+            left_list.append(right_list.popleft())
+        else:  
+            left_list.pop()
+            right_list.popleft()  
+    return 0 if len(left_list) else 1
