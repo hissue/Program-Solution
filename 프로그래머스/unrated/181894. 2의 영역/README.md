@@ -1,10 +1,10 @@
 # [unrated] 2의 영역 - 181894 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181894?language=python3) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181894) 
 
 ### 성능 요약
 
-메모리: 15.4 MB, 시간: 0.29 ms
+메모리: 15.6 MB, 시간: 0.58 ms
 
 ### 구분
 
