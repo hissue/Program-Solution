@@ -6,6 +6,6 @@ def solution(arr, k):
         if arr[idx] not in stack:
             stack.append(arr[idx])
         idx+=1
-    for idx in range(k-len(stack)):
-        stack.append(-1)
-    return stack
+    # for idx in range(k-len(stack)):
+    #     stack.append(-1)
+    return stack + [-1] * (k-len(stack))
