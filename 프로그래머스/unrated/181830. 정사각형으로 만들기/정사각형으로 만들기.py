@@ -5,4 +5,4 @@ def solution(arr):
     for i in range(col):
         arr[i] += [0] * (length - row)
         
-    return arr + [[0 for _ in range(length)]] * (length - col)
+    return arr + [[0] * (length)] * (length - col)
