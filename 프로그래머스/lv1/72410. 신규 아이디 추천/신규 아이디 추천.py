@@ -7,7 +7,6 @@ def solution(new_id):
         if data.islower() or data.isdigit() or data == "-" or data == "_" or data == ".":
             answer+=data
     #3
-    # answer = answer.replace("."," ")
     for i in range(answer.count("."),0,-1):
         answer = answer.replace("."*i," ")  
     #4
