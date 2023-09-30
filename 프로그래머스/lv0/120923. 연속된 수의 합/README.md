@@ -1,10 +1,10 @@
 # [level 0] 연속된 수의 합 - 120923 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120923#) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120923) 
 
 ### 성능 요약
 
-메모리: 10.1 MB, 시간: 0.19 ms
+메모리: 10.1 MB, 시간: 0.13 ms
 
 ### 구분
 
