@@ -5,4 +5,4 @@ def solution(sides):
     # 나머지
     b = sum(sides) - sides[1] - 1
     
-    return a+b
+    return 2*sides[0] - 1
