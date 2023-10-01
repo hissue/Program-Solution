@@ -1,7 +1,6 @@
 import math
 def solution(fees, records):
     dirci = {}
-    answer = 0
     baseTime = fees[0]
     baseRate = fees[1]
     perTime = fees[2]
