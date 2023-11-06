@@ -6,12 +6,8 @@ class Solution {
         int end;
        for (int i=0 ;i<index;i++){
             start = n*i;
-            if ( start+n > my_str.length()){
-                end = my_str.length();
-            }else{
-                end = start + n;
-            }
-           answer[i] = my_str.substring(start,end);
+            end = start+n > my_str.length() ? my_str.length() : start+n;
+            answer[i] = my_str.substring(start,end);
        }
         return answer;
     }
