@@ -1,6 +1,6 @@
 # [level unrated] 배열 조각하기 - 181893 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181893?language=java#) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181893?language=java) 
 
 ### 성능 요약
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2023년 11월 1일 13:52:52
+2023년 11월 1일 13:53:42
 
 ### 문제 설명
 
